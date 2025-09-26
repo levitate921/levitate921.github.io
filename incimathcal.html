@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>你是因袭吗</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+
+        .ui.glowing-silver.label {
+            color: white;
+            background: linear-gradient(135deg,
+                    rgb(170, 168, 168) 43%,
+                    rgba(170, 168, 168, 0.3) 50%,
+                    rgba(170, 168, 168, 1) 57%);
+            animation: glowing-background 3s ease-in-out infinite;
+            background-size: 250% 250%;
+            box-shadow: 0 0 20px rgba(170, 168, 168, 0.8);
+            transition: box-shadow 0.3s ease-in-out, background 0.3s ease-in-out;
+            padding: 20px 40px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            display: inline-block;
+            text-decoration: none;
+            font-size: 1.5em;
+        }
+
+        .ui.glowing-silver.label:hover {
+            color: white;
+            background: linear-gradient(135deg,
+                    rgb(148, 146, 146) 43%,
+                    rgba(148, 146, 146, 0.3) 50%,
+                    rgb(148, 146, 146) 57%);
+            box-shadow: 0 0 30px rgba(148, 146, 146, 0.8);
+            animation: glowing-background 3s ease-in-out infinite;
+            background-size: 250% 250%;
+            transition: box-shadow 0.3s ease-in-out, background 0.3s ease-in-out;
+        }
+        
+        .ui.glowing-gold.label {
+            color: white;
+            background: linear-gradient(135deg,
+                    rgba(255, 215, 0, 1) 43%,
+                    rgba(255, 215, 0, 0.3) 50%,
+                    rgba(255, 215, 0, 1) 57%);
+            animation: glowing-background 3s ease-in-out infinite;
+            background-size: 250% 250%;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+            transition: box-shadow 0.3s ease-in-out, background 0.3s ease-in-out;
+            padding: 20px 40px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            display: inline-block;
+            text-decoration: none;
+            font-size: 5em;
+        }
+
+        .ui.glowing-gold.label:hover {
+            color: white;
+            background: linear-gradient(135deg,
+                    rgb(245, 208, 0) 43%,
+                    rgba(245, 208, 0, 0.3) 50%,
+                    rgb(245, 208, 0) 57%);
+            animation: glowing-background 3s ease-in-out infinite;
+            background-size: 250% 250%;
+            box-shadow: 0 0 30px rgba(245, 208, 0, 0.8);
+            transition: box-shadow 0.3s ease-in-out, background 0.3s ease-in-out;
+        }
+
+        @keyframes glowing-background {
+            0% {
+                background-position: 0% 0%;
+            }
+            100% {
+                background-position: 100% 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="ui label glowing-gold">IncimathCal</a>
+    </div>
+</body>
+</html>
