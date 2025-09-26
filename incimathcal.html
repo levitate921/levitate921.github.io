@@ -14,6 +14,7 @@
             align-items: center;
             background: #ffffff;
             font-family: Arial, sans-serif;
+            flex-direction: column;
         }
 
         .ui.glowing-silver.label {
@@ -86,11 +87,30 @@
                 background-position: 100% 100%;
             }
         }
+        
+        .disclaimer {
+            text-align: center;
+            margin-top: 20px;
+            color: #888;
+            font-size: 0.8em;
+            max-width: 500px;
+            line-height: 1.4;
+            padding: 0 20px;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <a class="ui label glowing-gold" href="https://www.mcdonalds.com.cn/" target="_blank">IncimathCal</a>
+        <a class="ui label glowing-gold" href="https://www.mcdonalds.com.cn/" target="_blank" rel="noopener noreferrer">IncimathCal</a>
+        <div class="disclaimer">
+            这是一个非官方页面，仅提供到麦当劳中国官网的便捷链接。<br>本页面与麦当劳公司无任何关联。
+        </div>
     </div>
 </body>
 </html>
