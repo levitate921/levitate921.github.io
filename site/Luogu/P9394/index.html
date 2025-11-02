@@ -839,11 +839,20 @@
 
   <h1>P9394 白鹭兰</h1>
 
+<p>Problem Link: <a href="https://www.luogu.com.cn/problem/P9394">https://www.luogu.com.cn/problem/P9394</a>。</p>
 <details class="note" open="open">
 <summary>题意</summary>
 <p>给定一张 <span class="arithmatex">\(n\)</span> 个点，<span class="arithmatex">\(m\)</span> 条边的无向图 <span class="arithmatex">\(G\)</span>，求一个最小的 <span class="arithmatex">\(k\)</span>，使得存在点集划分 <span class="arithmatex">\(V_1,V_2,...,V_t\)</span> 满足：对于每一个点集的前缀/后缀并，它们的导出子图联通，且每个点集大小 <span class="arithmatex">\(\leq k\)</span>。求最小的 <span class="arithmatex">\(k\)</span> 和划分方案。
 <span class="arithmatex">\(2\leq n \leq 2\times 10^5,1\leq m\leq 2.3\times 10^5\)</span>，保证无重边自环，保证图联通。</p>
 </details>
+<p>前置知识是<strong>双极定向</strong>。</p>
+<p>双极定向，即给定一个无向图 <span class="arithmatex">\(G\)</span> 以及两个点 <span class="arithmatex">\(S,T\)</span>，要求你找到一种给这个图边定向的方式，使得：</p>
+<ul>
+<li>这张图是一个 DAG；</li>
+<li><span class="arithmatex">\(S\)</span> 是唯一一个入度为 <span class="arithmatex">\(0\)</span> 的点，<span class="arithmatex">\(T\)</span> 是唯一一个出度为 <span class="arithmatex">\(0\)</span> 的点。</li>
+</ul>
+<p>有个等价的问题，就是转化为求一个拓扑序，满足：每个前缀联通，每个后缀联通，然后每条边从拓扑序小的连向拓扑序大的就行。</p>
+<p>结论是：<strong>一张图可以被双极定向，当且仅当这张图建圆方树后方点构成一条链，且所有方点都在 <span class="arithmatex">\(S\to T\)</span> 的路径上</strong>，形象地描述，就是以 <span class="arithmatex">\(S,T\)</span> 为两端的毛毛虫。</p>
 
 
 
