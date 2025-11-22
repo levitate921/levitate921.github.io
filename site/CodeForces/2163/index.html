@@ -24,7 +24,7 @@
     
     
       
-        <title>No.2163 Div 2 Round - levitate921's blog</title>
+        <title>No.2163 Div2 - levitate921's blog</title>
       
     
     
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              No.2163 Div 2 Round
+              No.2163 Div2
             
           </span>
         </div>
@@ -1416,6 +1416,8 @@
       
         
       
+        
+      
     
     
     
@@ -1469,7 +1471,7 @@
   
   
   <span class="md-ellipsis">
-    No.2163 Div 2 Round
+    No.2163 Div2
     
   </span>
   
@@ -1482,7 +1484,7 @@
   
   
   <span class="md-ellipsis">
-    No.2163 Div 2 Round
+    No.2163 Div2
     
   </span>
   
@@ -1568,7 +1570,30 @@
   
   
   <span class="md-ellipsis">
-    No.2164 Global Round
+    No.2164 Global
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2165/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    No.2165/2166 Div1 + Div2
     
   </span>
   
@@ -1888,7 +1913,7 @@
   
 
 
-  <h1>No.2163 Div 2 Round</h1>
+  <h1>No.2163 Div2</h1>
 
 <p>Contest Link: <a href="https://codeforces.com/contest/2163">https://codeforces.com/contest/2163</a>。</p>
 <h2 id="a-souvlaki-vs-kalamaki">A. Souvlaki VS. Kalamaki<a class="headerlink" href="#a-souvlaki-vs-kalamaki" title="Permanent link">&para;</a></h2>
@@ -2050,7 +2075,7 @@
 简单版：<span class="arithmatex">\(300\)</span> 次询问，困难版：<span class="arithmatex">\(30\)</span> 次询问。<span class="arithmatex">\(4\leq n\leq 10^4\)</span>。</p>
 </details>
 <p>观察 1：如果一个区间完全被另一个区间包含，前者的 <span class="arithmatex">\(\operatorname{mex}\)</span> 严格小于后者，是没用的。</p>
-<p>观察 2：<span class="arithmatex">\(\operatorname{mex}_{i\in[l,r]}{a_i\}=\min(\operatorname{mex_{i\in[1,r]}\{a_i}\},\operatorname{mex_{i\in[l,n]}\{a_i}\})\)</span>。证明不难。</p>
+<p>观察 2：<span class="arithmatex">\(\operatorname{mex}_{i\in[l,r]}\{a_i\}=\min(\operatorname{mex}_{i\in[1,r]}\{a_i\},\operatorname{mex}_{i\in[l,n]}\{a_i\})\)</span>。证明不难。</p>
 <p>由观察 2，设区间 <span class="arithmatex">\([l,r]\)</span> 的 <span class="arithmatex">\(\operatorname{mex}\)</span> 为 <span class="arithmatex">\(k\)</span>，如果我们查到了 <span class="arithmatex">\([1,r],[l,n]\)</span> 的 <span class="arithmatex">\(\operatorname{mex}\)</span>，且前者的小于后者的。那么对于区间 <span class="arithmatex">\([l',r'],l'&lt;l,r'&lt;r\)</span>，<span class="arithmatex">\([l',r']\)</span> 的答案是<strong>不可能更优的</strong>，因为序列中的元素 <span class="arithmatex">\(k\)</span> 一定在 <span class="arithmatex">\((r,n]\)</span> 之中，且这个区间与 <span class="arithmatex">\([l',r']\)</span> 无交。</p>
 <p>同理，如果 <span class="arithmatex">\([1,r],[l,n]\)</span> 的 <span class="arithmatex">\(\operatorname{mex}\)</span> 均为 <span class="arithmatex">\(k\)</span>，那么这个区间 <span class="arithmatex">\([l,r]\)</span> 直接就是最优解了。</p>
 <p>所以我们可以二分区间：将区间按照左端点排序，由观察 1 删掉若干无用区间，然后剩下区间两端点都是排好序的，在这个区间序列上进行二分，二分收缩方向由 <span class="arithmatex">\([1,r],[l,n]\)</span> 的大小关系决定。总询问次数 <span class="arithmatex">\(2\log n\)</span>。</p>
@@ -2114,8 +2139,10 @@
 </code></pre></div>
 </details>
 <h2 id="e-plegma">E. Plegma<a class="headerlink" href="#e-plegma" title="Permanent link">&para;</a></h2>
-<p>???+ note "题意":
-    通信题，对于 Alice，给一个 <span class="arithmatex">\(n*n\)</span> 的 01 矩阵，Alice 要返回两个 <span class="arithmatex">\([1,n]\)</span> 之内的数 <span class="arithmatex">\(i,j\)</span>；对于 Bob，它接收到 01 矩阵的第 <span class="arithmatex">\(i\)</span> 行，第 <span class="arithmatex">\(j\)</span> 列的具体值，但是不知道 <span class="arithmatex">\(i,j\)</span> 的值，Bob 需要返回这个 01 矩阵中所有 1 是否构成一个四连通块。</p>
+<details class="note" open="open">
+<summary>题意</summary>
+<p>通信题，对于 Alice，给一个 <span class="arithmatex">\(n*n\)</span> 的 01 矩阵，Alice 要返回两个 <span class="arithmatex">\([1,n]\)</span> 之内的数 <span class="arithmatex">\(i,j\)</span>；对于 Bob，它接收到 01 矩阵的第 <span class="arithmatex">\(i\)</span> 行，第 <span class="arithmatex">\(j\)</span> 列的具体值，但是不知道 <span class="arithmatex">\(i,j\)</span> 的值，Bob 需要返回这个 01 矩阵中所有 1 是否构成一个四连通块。</p>
+</details>
 <p>通信传递的信息量其实是远大于答案的信息量的，所以我们考虑，能否通过某一位传递信息？</p>
 <p>定义 Bob 收到的两个字符串为行串和列串。</p>
 <p>如果约定 Bob 收到的列串第一个字符为 <span class="arithmatex">\(1\)</span>，那么就是连通，否则不连通，这样可以吗？</p>
@@ -2133,8 +2160,9 @@
 <p>第一行有0有1：
 连通：第一行 + 第一位0的列
 不连通：第一行 + 第一位1的列</p>
-<p>??? note "code":
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">//CF2163E</span>
+<details class="note">
+<summary>code</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">//CF2163E</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;bits/stdc++.h&gt;</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
@@ -2235,7 +2263,8 @@
 <a id="__codelineno-4-99" name="__codelineno-4-99" href="#__codelineno-4-99"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-4-100" name="__codelineno-4-100" href="#__codelineno-4-100"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <a id="__codelineno-4-101" name="__codelineno-4-101" href="#__codelineno-4-101"></a><span class="p">}</span>
-</code></pre></div></p>
+</code></pre></div>
+</details>
 
 
 
